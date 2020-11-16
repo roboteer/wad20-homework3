@@ -6,7 +6,9 @@ Other possible components: LoginPage, Authors, NavBar/TitleBar?
 
 */
 <template>
-    <section></section>
+    <section>
+        TODO: list of posts
+    </section>
 </template>
 
 <script>
