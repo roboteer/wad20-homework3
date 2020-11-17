@@ -232,7 +232,6 @@ nav div.avatar-container {
     right: 0;
     top: 50px;
     text-align: left;
-    display: none;
 }
 .drop-down-container span{
     display: block;

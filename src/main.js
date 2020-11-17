@@ -6,6 +6,7 @@ import App from './App.vue'
 import BlogPosts from "./components/BlogPosts";
 import Author from "./models/Author";
 import Post from "./models/Post";
+import Profile from "./models/Profile";
 
 
 Vue.config.productionTip = false;
@@ -19,6 +20,7 @@ const router = new VueRouter({routes});
 
 const store = new Vuex.Store({
     state: {
+        profile: new Profile("John", "Doe", "john.doe@example.com", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"),
         posts: [
             new Post("Felt cute, might delete later", "Sep 18, 2020 17:18",
                "https://i.pcmag.com/imagery/reviews/00EfzjLJNL6FNKVxviGg7Zw-2.1569473216.fit_scale.size_1182x667.jpg",
@@ -26,6 +28,7 @@ const store = new Vuex.Store({
             new Post("Which weighs more, a pound of feathers or a pound of bricks?", "Sep 18, 2020 16:17", null, new Author(
               "John", "Doe", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"))
         ]
+
     },
     getters: {
         posts: state => state.posts

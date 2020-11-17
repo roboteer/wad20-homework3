@@ -7,28 +7,18 @@
         <div class="search-container">
           <input type="text" name="search"><button type="button">Search</button>
         </div>
-        <div class="avatar-container">
-          <img class="avatar">
-          <div class="drop-down-container">
-            <span id="user-name">John Doe</span>
-            <span id="user-email"></span>
-            <span class="separator"></span>
-            <span>
-              <a href="browse.html">Browse</a>
-            </span>
-            <span class="separator"></span>
-            <span>
-              <a href="login.html">Log Out</a>
-            </span>
-          </div>
-        </div>
+        <Profile></Profile>
       </nav>
     </header>
 </template>
 
 <script>
+    import Profile from './Profile'
     export default {
         name: 'Header',
+        components: {
+          Profile
+        },
         computed: {
         }
     }
