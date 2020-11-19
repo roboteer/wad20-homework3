@@ -34,9 +34,13 @@
         },
         methods:{
           toggleVisibility: function() {
-              this.isHidden = !this.isHidden
+              this.isHidden = !this.isHidden;
               console.log(this.isHidden)
           }
+        },
+        mounted() {
+            //console.log("Mounted");
+            this.$store.dispatch("getProfile");
         }
 
     }

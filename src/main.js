@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
-//import Axios from 'axios';
+import axios from 'axios';
 import App from './App.vue'
 import BlogPosts from "./components/BlogPosts";
 import Author from "./models/Author";
@@ -20,7 +20,7 @@ const router = new VueRouter({routes});
 
 const store = new Vuex.Store({
     state: {
-        profile: new Profile("John", "Doe", "john.doe@example.com", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"),
+        profile: new Profile("Jo", "Doe", "jo.doe@example.com", "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"),
         posts: [
             new Post("Felt cute, might delete later", "Sep 18, 2020 17:18",
                "https://i.pcmag.com/imagery/reviews/00EfzjLJNL6FNKVxviGg7Zw-2.1569473216.fit_scale.size_1182x667.jpg",
@@ -31,7 +31,29 @@ const store = new Vuex.Store({
 
     },
     getters: {
-        posts: state => state.posts
+        posts: state => state.posts,
+
+    },
+
+    actions: {
+        getProfile({commit}) {
+            axios.get('https://private-517bb-wad20postit.apiary-mock.com/users/1')
+                .then(resp => {
+                    //console.log(resp);
+                    let d = resp.data;
+                    let p = new Profile(d.firstname, d.lastname, d.email, d.avatar); //because avatar->profile_src
+                    commit('SET_PROFILE', p)
+                }
+            )
+
+        }
+
+    },
+
+    mutations: {
+        SET_PROFILE(state, profiledata){
+            state.profile = profiledata
+        }
     }
 });
 
