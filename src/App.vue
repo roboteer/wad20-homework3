@@ -14,6 +14,11 @@ export default {
   components: {
     //HelloWorld
     //BlogPosts,
+  },
+  watch: {
+    '$route' (to, from) {
+      console.log('Route changed from ' + from.path + ' to ' + to.path);
+    }
   }
 }
 </script>

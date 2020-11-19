@@ -1,8 +1,8 @@
 export default class Author {
 
-    constructor(firstname, lastname, profile_src){
+    constructor(firstname, lastname, avatar){
         this.firstname = firstname;
         this.lastname = lastname;
-        this.profile_src = profile_src;
+        this.avatar = avatar;
     }
 }

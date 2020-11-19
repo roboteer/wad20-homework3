@@ -7,7 +7,7 @@
             <span id="user-email">{{profile.email}}</span>
             <span class="separator"></span>
             <span>
-              <a href="browse.html">Browse</a>
+                <router-link :to="{path: '/browse.html' }">Browse</router-link>
             </span>
             <span class="separator"></span>
             <span>

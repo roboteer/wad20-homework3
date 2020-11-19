@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import axios from 'axios';
 import App from './App.vue'
 import BlogPosts from "./components/BlogPosts";
+import Authors from "./components/Authors"
+
 import Author from "./models/Author";
 import Post from "./models/Post";
 import Profile from "./models/Profile";
@@ -14,7 +16,8 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 
 const routes =[
-    {path:'/', component: BlogPosts}
+    {path:'/', component: BlogPosts},
+    {path:'/browse.html', component: Authors}
 ];
 const router = new VueRouter({routes});
 
@@ -27,7 +30,8 @@ const store = new Vuex.Store({
                new Author("Firstname", "Lastname", "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80")),
             new Post("Which weighs more, a pound of feathers or a pound of bricks?", "Sep 18, 2020 16:17", null, new Author(
               "John", "Doe", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"))
-        ]
+        ],
+        authors: []
 
     },
     getters: {
@@ -46,6 +50,13 @@ const store = new Vuex.Store({
                 }
             )
 
+        },
+        getAuthors({commit}){ //list of authors for "Browse" page
+            axios.get('https://private-517bb-wad20postit.apiary-mock.com/profiles')
+                .then(resp => {
+                    console.log(resp);
+                    commit('SET_AUTHORS', resp.data);
+                })
         }
 
     },
@@ -53,6 +64,9 @@ const store = new Vuex.Store({
     mutations: {
         SET_PROFILE(state, profiledata){
             state.profile = profiledata
+        },
+        SET_AUTHORS(state, data){
+            state.authors = data
         }
     }
 });
