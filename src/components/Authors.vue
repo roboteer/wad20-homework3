@@ -4,7 +4,7 @@
         <section class="main-container">
             <div class="profile" v-for="(author, index) in authors" :key="index">
                 <img :src="author.avatar" :alt="`${author.firstname} ${author.lastname}`">
-                <h2>{{author.firstname}} {{author.lastname}}</h2>
+                <h2>{{author | fullName}}</h2>
                 <button class="follow-button" @click="myToggleFunction($event)">Follow</button>
             </div>
         </section>
@@ -37,7 +37,10 @@
             }
         },
         filters: {
-
+            fullName(p) {
+                //todo: ensure proper capitalization, trimming etc perhaps
+                return p.firstname + ' ' + p.lastname;
+            }
         },
         mounted() {
             //console.log("Mounted");
