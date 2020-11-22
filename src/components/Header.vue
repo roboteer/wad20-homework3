@@ -2,7 +2,9 @@
     <header>
       <nav>
         <div class="logo-container">
-          <img src="../assets/logo.png" alt="postIt">
+          <router-link :to="{path: '/' }">
+              <img src="../assets/logo.png" alt="postIt">
+          </router-link>
         </div>
         <div class="search-container">
           <input type="text" name="search"><button type="button">Search</button>
