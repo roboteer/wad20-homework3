@@ -17,9 +17,9 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 
 const routes =[
-    {path:'/', component: BlogPosts},
-    {path:'/browse.html', component: Authors},
-    {path:'/login.html', component: Login}
+    {path:'/', component: Login},
+    {path:'/browse', component: Authors},
+    {path:'/posts', component: BlogPosts}
 ];
 const router = new VueRouter({routes});
 
@@ -42,11 +42,6 @@ const store = new Vuex.Store({
     getters: {
         posts: state => state.posts,
 
-    },
-    methods: {
-        logIn(User){
-            axios.post('index', User)
-        },
     },
     actions: {
         getProfile({commit}) {

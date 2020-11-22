@@ -40,31 +40,6 @@ a {
     color: #40c4ff;
 }
 
-.login-page {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#login-container {
-    background-image: url(./assets/logo.png);
-    background-size: 20% auto;
-    background-repeat: no-repeat;
-    background-position: 15px 15px;
-    min-width: 25%;
-    padding: 45px 45px;
-    background-color: #ffffff;
-    box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
-    text-align: center;
-}
-
-#login-container form div > input {
-    padding: 8px 16px;
-    margin: 4px 0;
-}
-
 button {
     padding: 8px 16px;
     margin: 4px 0;
@@ -206,23 +181,6 @@ nav div.avatar-container {
     padding: 10px;
 }
 
-.like-button {
-    background-image: url(./assets/like.png);
-    background-size: 15px;
-    background-repeat: no-repeat;
-    background-position: 5px center;
-    background-color: #8a8a8a;
-    width: 60px;
-    height: 25px;
-    padding-left: 23px;
-    line-height: 10px;
-    text-align: left;
-    border: none;
-}
-
-.like-button.liked {
-    background-color: #01579b;
-}
 .drop-down-container {
     position: absolute;
     min-width: 150px;

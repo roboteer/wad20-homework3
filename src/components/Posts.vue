@@ -10,17 +10,24 @@
             </video>
         <div class="post-title"><h3>{{post.title}}</h3></div>
         <div class="post-actions">
-            <button type="button" class="like-button">100k</button>
+            <LikeButton></LikeButton>
+
         </div>
     </div>
 </div>
 </template>
 
 <script>
+    import LikeButton from '../components/LikeButton.vue'
     export default {
         name: 'Posts',
-        methods: {
-
+        components:{
+            LikeButton
+        },
+        data: function () {
+            return {
+                clicked: false,
+            }
         },
         computed: {
             posts: function () {
@@ -38,6 +45,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 
 </style>
