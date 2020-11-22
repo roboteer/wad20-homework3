@@ -10,7 +10,7 @@
             </video>
         <div class="post-title"><h3>{{post.title}}</h3></div>
         <div class="post-actions">
-            <LikeButton></LikeButton>
+            <LikeButton :nr_of_likes=post.likes></LikeButton>
 
         </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-     <button type="button" class="like-button"  v-on:click ="clicked = !clicked" v-bind:class="{'like-button': !clicked, 'like-button-liked': clicked}">100k</button>
+     <button type="button" class="like-button"  v-on:click ="clicked = !clicked" v-bind:class="{'like-button': !clicked, 'like-button-liked': clicked}">{{nr_of_likes || 0}}</button>
 
 </template>
 
@@ -7,6 +7,7 @@
     
     export default {
         name: 'LikeButton',
+        props: ['nr_of_likes'], /* todo: this is where normally filter would be sanctioned - if nr of likes would be natural number*/
         data: function () {
             return {
                 clicked: false,
