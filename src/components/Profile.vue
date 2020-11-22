@@ -1,5 +1,5 @@
 <template>
-    <section>
+    
         <div class="avatar-container">
           <img class="avatar" :src="profile.profile_src" @click="toggleVisibility">
           <div class="drop-down-container" v-show='!isHidden'>
@@ -15,8 +15,7 @@
             </span>
           </div>
         </div>
-    </section>
-</template>
+    </template>
 
 <script>
 
