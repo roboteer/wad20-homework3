@@ -11,7 +11,7 @@
             </span>
             <span class="separator"></span>
             <span>
-              <a href="login.html">Log Out</a>
+                <router-link :to="{path: '/login.html' }">Log In</router-link>
             </span>
           </div>
         </div>

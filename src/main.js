@@ -4,7 +4,8 @@ import VueRouter from 'vue-router'
 import axios from 'axios';
 import App from './App.vue'
 import BlogPosts from "./components/BlogPosts";
-import Authors from "./components/Authors"
+import Authors from "./components/Authors";
+import Login from "./components/Login";
 
 //import Author from "./models/Author";
 import Post from "./models/Post";
@@ -17,7 +18,8 @@ Vue.use(Vuex);
 
 const routes =[
     {path:'/', component: BlogPosts},
-    {path:'/browse.html', component: Authors}
+    {path:'/browse.html', component: Authors},
+    {path:'/login.html', component: Login}
 ];
 const router = new VueRouter({routes});
 
