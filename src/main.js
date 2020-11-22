@@ -43,7 +43,11 @@ const store = new Vuex.Store({
         posts: state => state.posts,
 
     },
-
+    methods: {
+        logIn(User){
+            axios.post('index', User)
+        },
+    },
     actions: {
         getProfile({commit}) {
             axios.get('https://private-517bb-wad20postit.apiary-mock.com/users/1')

@@ -15,7 +15,7 @@
         </div>
         <div>
           <h3>Please Log In</h3>
-          <form action="index.html" method="post">
+          <form action="index.html" method="get">
             <div>
               <input type="text" name="email" placeholder="Email">
             </div>
@@ -23,7 +23,7 @@
               <input type="password" name="password" placeholder="Password">
             </div>
             <div>
-              <button class="button" type="submit" name="login">Log In</button>
+              <button v-on:click="logIn">Log In</button>
             </div>
             <div>
               <small>
@@ -37,7 +37,6 @@
 </template>
 
 <script>
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
